@@ -94,3 +94,12 @@ The target temperature reported by the integration sometimes _seems_ to be sligh
 This is caused by the fact that the Nest mobile app actually actually allows users to set the temperature in small
 increments, but the displayed temperature is rounded to the nearest 0.5 degree. In other words, the temperature
 displayed by the integration is correct, just _more exact_ than what is shown in the app.
+
+## Debugging
+
+To enable debug logs for badnest in certain Home Assistant configurations (e.g. Docker), add this `logger` section to your `configuration.yaml`:
+
+    logger:
+        default: info
+        logs:
+            custom_components.badnest: debug
