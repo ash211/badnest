@@ -127,6 +127,7 @@ class NestAPI():
             return self._get_cameras()
 
     def _get_devices(self):
+        assert self._user_id, "No user_id found; check configuration"
         try:
             r = self._session.post(
                 f"{API_URL}/api/0.1/user/{self._user_id}/app_launch",
@@ -178,6 +179,7 @@ class NestAPI():
             return "Unknown"
 
     def update(self):
+        assert self._user_id, "No user_id found; check configuration"
         try:
             # To get friendly names
             r = self._session.post(
